@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Main Angular Files -->
+    <script src="assets/js/angular.js"></script>
+    <script src="assets/js/angular-route.js"></script>
+    <script src="assets/js/angular-animate.js"></script>
+    <script src="assets/js/dirPagination.js"></script>
+
+
+    <!-- Angular Config/Routes -->
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
+
+    <!-- Angular Controllers -->
+    <script src="app/controllers/userCtrl.js"></script>
+    <script src="app/controllers/mainCtrl.js"></script>
+    <script src="app/controllers/emailCtrl.js"></script>
+    <script src="app/controllers/managementCtrl.js"></script>
+    <script src="app/controllers/homeCtrl.js"></script>
+    <script src="app/controllers/postCtrl.js"></script>
+    <script src="app/controllers/adminCtrl.js"></script>
+
+
+    <!-- Angular Services -->
+    <script src="app/services/userServices.js"></script>
+    <script src="app/services/authServices.js"></script>
+    <script src="app/services/homeServices.js"></script>
+    <script src="app/services/postServices.js"></script>
+    <script src="app/services/adminServices.js"></script>
+
+
+    <!-- UploadFileJS -->
+    <script type="text/javascript" src="assets/ng-file-upload/dist/ng-file-upload.min.js"></script>
+    <!-- <script type="text/javascript" src="assets/ng-file-upload/"></script> -->
+
+
+    <!-- Cascade Style Sheets -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style-custom.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/SidebarNav.min.css">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap-tpls.min.js"></script>
+
+
+    <title>QuanLyNhaTro</title>
+
+</head>
+
+<body ng-app="userApp" ng-controller="mainCtrl as main" ng-show="main.loadme" ng-cloak>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <a class="navbar-brand page-scroll" ng-click="reloadRoute()">QuanLyNhaTro</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden active">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="/">Home</a>
+                    </li>
+                    <li class="">
+                        <a ng-show="!main.isLoggedIn" class="page-scroll" href="/login">Login</a>
+                    </li>
+                    <li class="">
+                        <a ng-show="!main.isLoggedIn" class="page-scroll" href="/register">Register</a>
+                    </li>
+
+                    <li class="">
+                        <a ng-show="main.isLoggedIn" class="page-scroll" href="#" ng-click="main.logout();">Logout</a>
+                    </li>
+                    <li class="">
+                        <a ng-show="main.isLoggedIn  " class="page-scroll" href="/info">Management</a>
+                    </li>
+                    <li class="">
+                        <a ng-show="main.isLoggedIn " class="page-scroll" href="/post">PostNews</a>
+                    </li>
+                    <li class="">
+                        <a ng-show="main.isLoggedIn" class="page-scroll" href="/info">Hello {{ main.username }} </a>
+                    </li>
+                    <li>
+                    <!-- <li class="page-scroll" ng-controller="facebookCtrl as facebook"> -->
+                        <i ng-show="main.isLoggedIn && main.iconFacebook=='true'" class="fa fa-facebook-square" style="font-size: 28px;color:white;margin-top:9px ;"></i>
+                        <i ng-show="main.isLoggedIn && main.iconGoogle=='true'" class="fa fa-google-plus-square" style="font-size: 28px;color:white;margin-top:9px ;"></i>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <section id="services" style="padding-top:70px;">
+        <div class="row">
+            <!-- Angular View -->
+            <div ng-view></div>
+     
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+          
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" ng-click="main.endSession();" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">{{main.modalHeader}}</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>{{main.modalBody}}</p>
+                      <div ng-show="main.hideButton" class="dizzy-gillespie"></div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" ng-hide="main.hideButton" ng-click="main.renewSession()" class="btn btn-primary"
+                        data-dismiss="modal">Yes</button>
+                      <button type="button" ng-hide="main.hideButton" ng-click="main.endSession();" class="btn btn-danger"
+                        data-dismiss="modal">No</button>
+                    </div>
+                  </div>
+          
+                </div>
+              </div>
+          
+            <!-- Angular View -->
+
+        </div>
+    </section>
+
+    <script src="assets/js/jquery-3.1.1.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,412 @@
+<style>
+    .page-container.sidebar-collapsed .sidebar-menu {
+        width: 65px;
+        transition: all 100ms ease-in-out;
+        transition-delay: 300ms;
+    }
+
+    .page-container.sidebar-collapsed-back .sidebar-menu {
+        width: 230px;
+        transition: all 100ms ease-in-out;
+    }
+
+    .page-container.sidebar-collapsed .sidebar-icon {
+        transform: rotate(90deg);
+        transition: all 300ms ease-in-out;
+        margin-right: 0.8em;
+        margin-top: -8px;
+        color: #fff;
+        background: #02BBCA;
+        border-radius: 0;
+
+    }
+
+    .page-container.sidebar-collapsed-back .sidebar-icon {
+        transform: rotate(0deg);
+        transition: all 300ms ease-in-out;
+    }
+
+    .page-container.sidebar-collapsed .logo {
+        padding: 21px 0;
+        height: 63px;
+        box-sizing: border-box;
+        transition: all 100ms ease-in-out;
+        transition-delay: 300ms;
+
+    }
+
+    .page-container.sidebar-collapsed-back .logo {
+        width: 100%;
+        padding: 13px 14px;
+        height: 60px;
+        box-sizing: border-box;
+        transition: all 100ms ease-in-out;
+    }
+
+    .page-container.sidebar-collapsed #logo {
+        opacity: 0;
+        transition: all 200ms ease-in-out;
+        display: none;
+    }
+
+    .page-container.sidebar-collapsed .down {
+        display: none;
+    }
+
+    .page-container.sidebar-collapsed-back #logo {
+        opacity: 1;
+        transition: all 200ms ease-in-out;
+        transition-delay: 300ms;
+        ;
+    }
+
+    .page-container.sidebar-collapsed #menu span {
+        opacity: 0;
+        transition: all 50ms linear;
+    }
+
+    .page-container.sidebar-collapsed-back #menu span {
+        opacity: 1;
+        transition: all 200ms linear;
+        transition-delay: 300ms;
+    }
+
+    .sidebar-menu {
+        position: fixed;
+        float: left;
+        width: 230px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #052963;
+        color: #aaabae;
+        box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
+        -o-box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
+        -webkit-box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
+        -moz-box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
+        z-index: 999;
+    }
+
+    #menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    #menu li {
+        position: relative;
+        margin: 0;
+        border-bottom: 1px ridge rgba(6, 26, 68, 0.96);
+        padding: 0;
+        padding: 0;
+    }
+
+    #menu li ul {
+        opacity: 0;
+        height: 0px;
+    }
+
+    #menu li a {
+        font-style: normal;
+        font-weight: 400;
+        position: relative;
+        display: block;
+        padding: 13px 20px;
+        color: #fff;
+        white-space: nowrap;
+        z-index: 2;
+        background-color: #021F4E;
+        font-size: 0.9em;
+        font-family: 'Roboto', sans-serif;
+        border: none;
+        border-left: 4px solid #021F4E;
+    }
+
+    #menu li a:hover {
+        color: #ffffff;
+        background-color: #002561;
+        transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+        border-left: 4px solid #00C6D7;
+    }
+
+    #menu li.active>a {
+        background-color: #2b303a;
+        color: #ffffff;
+    }
+
+    #menu ul li {
+        background-color: #00C6D7;
+    }
+
+    #menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    #menu li ul {
+        position: absolute;
+        visibility: hidden;
+        left: 100%;
+        top: -1px;
+        background-color: #2b303a;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.1s linear;
+        border-top: 1px solid rgba(69, 74, 84, 0.7);
+    }
+
+    #menu li:hover>ul {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    li#menu-mensagens,
+    li#menu-arquivos {
+        background-color: #00C6D7 !important;
+    }
+
+    #menu li li ul {
+        right: 100%;
+        visibility: hidden;
+        top: -1px;
+        opacity: 0;
+        transition: opacity 0.1s linear;
+    }
+
+    #menu li li:hover ul {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    #menu .fa {
+        margin-right: 5px;
+    }
+
+
+
+    .sidebar-icon {
+        margin-top: -2px;
+        border: 1px solid #00C6D7;
+        text-align: right;
+        line-height: 1;
+        font-size: 19px;
+        padding: 8px 10px;
+        border-radius: 0px;
+        color: #fff;
+        background: #02BBCA;
+        float: right;
+    }
+
+
+    .progress.active .bar {
+        -webkit-animation: progress-bar-stripes 2s linear infinite;
+        -moz-animation: progress-bar-stripes 2s linear infinite;
+        -ms-animation: progress-bar-stripes 2s linear infinite;
+        -o-animation: progress-bar-stripes 2s linear infinite;
+        animation: progress-bar-stripes 2s linear infinite;
+    }
+
+    @-webkit-keyframes progress-bar-stripes {
+        from {
+            background-position: 40px 0;
+        }
+
+        to {
+            background-position: 0 0;
+        }
+    }
+
+    @-moz-keyframes progress-bar-stripes {
+        from {
+            background-position: 40px 0;
+        }
+
+        to {
+            background-position: 0 0;
+        }
+    }
+
+    @-ms-keyframes progress-bar-stripes {
+        from {
+            background-position: 40px 0;
+        }
+
+        to {
+            background-position: 0 0;
+        }
+    }
+
+    @-o-keyframes progress-bar-stripes {
+        from {
+            background-position: 0 0;
+        }
+
+        to {
+            background-position: 40px 0;
+        }
+    }
+
+    @keyframes progress-bar-stripes {
+        from {
+            background-position: 40px 0;
+        }
+
+        to {
+            background-position: 0 0;
+        }
+    }
+
+    ul.dropdown-menu2.drpdwn-meu2 {
+        top: 102%;
+    }
+
+    ul.dropdown-menu.two {
+        -webkit-transform-origin: 100% 0;
+        -ms-transform-origin: 100% 0;
+        -o-transform-origin: 100% 0;
+        transform-origin: 100% 0;
+        -webkit-animation-duration: .3s;
+        -o-animation-duration: .3s;
+        animation-duration: .3s;
+        background: #fff;
+        border: 1px solid #CECDCD;
+
+    }
+
+
+
+    @media (max-width:320px) {
+        footer p {
+            font-size: 0.8em;
+            padding-right: 68px;
+            line-height: 1.8em;
+        }
+
+        .switch-main {
+            margin: 0 3em;
+        }
+    }
+</style>
+<div class="row">
+
+
+    <div class=" col-md-3 col-sm-3 col-xs-3" style="margin-top: 3.5%;">
+        <div>
+            <!--//content-inner-->
+            <!--/sidebar-menu-->
+            <div class="sidebar-menu" style="margin-top: 3.5%;">
+                <!-- <header class="logo"> -->
+                <a href="/info" class="">
+                    <h1 class="text-center">{{postmanagement.user.permission}}</h1>
+                </a>
+                <!-- </header> -->
+                <div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
+                <!--/down-->
+
+                <!--//down-->
+                <div class="menu">
+                    <ul id="menu">
+                        <li><a href="/info"><i class="fa fa-tachometer"></i> <span>Thông tin cá nhân</span></a>
+                        </li>
+                        <li id="menu-academico"><a href="/postmanagement"><i class="fa fa-table"></i> <span> Quản Lí Bài
+                                    Đăng</span>
+                                <span class="fa fa-angle-right" style="float: right"></span></a>
+                        </li>
+                        <li ng-show="postmanagement.user.permission!='user'"><a href="/browse"><i class="lnr lnr-pencil"></i>
+                                <span>Duyệt Bài Đăng</span></a>
+                        </li>
+                        <li ng-show="postmanagement.user.permission!='user'" id="menu-academico"><a
+                                href="/management"><i class="lnr lnr-book"></i> <span>Quản Lí Tài Khoản</span>
+                                <span class="fa fa-angle-right" style="float: right"></span></a>
+                        </li>
+                        <li ng-show="postmanagement.user.permission=='user'"><a href="/post"><i class="lnr lnr-envelope"></i> <span>Đăng Bài</span><span
+                                    class="fa fa-angle-right" style="float: right"></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="col-md-8 col-sm-8 col-xs-8">
+        <!-- Thông tin cá nhân -->
+        <div class=""> <br>
+            <h1 class="text-center" style="color:lightseagreen;">Quản Lý Bài Đăng</h1>
+            <div class="info text-center" style="background-image: linear-gradient(#eeaeca, #b2e994); margin-top: 40px; border: 1px solid;
+                padding: 10px;
+                box-shadow: 5px 10px seagreen;"><br>
+                <div class="content" style="margin-left: 0px;">
+                    <ul class="pagination">
+                        <li ng-class="{disabled :postmanagement.currentPage === 1}">
+                            <a ng-click="postmanagement.pagination(1)">First</a>
+                        </li>
+                        <li ng-class="{disabled:postmanagement.currentPage === 1}">
+                            <a ng-click="postmanagement.pagination(postmanagement.currentPage - 1)">Previous</a>
+                        </li>
+                        <li ng-repeat="page in postmanagement.pager"
+                            ng-class="{active:postmanagement.currentPage === page}">
+                            <a ng-click="postmanagement.pagination(page)">{{page}}</a>
+                        </li>
+                        <li ng-class="{disabled:postmanagement.currentPage >= postmanagement.pages}">
+                            <a ng-class="{disabled:postmanagement.currentPage >= postmanagement.pages}"
+                                ng-click="postmanagement.pagination(postmanagement.currentPage + 1)">Next</a>
+                        </li>
+                        <li ng-class="{disabled:postmanagement.currentPage >= postmanagement.pages}">
+                            <a ng-click="postmanagement.pagination(postmanagement.pages)">Last</a>
+                        </li>
+                    </ul>
+                    <div class="table">
+                        <table class="table table-dark table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="th text-center">STT</th>
+                                    <th class="text-center" style="width: 600px;">Tiêu đề</th>
+                                    <th class="th text-center">Ngày Đăng</th>
+                                    <th class="th text-center">Ngày Hết Hạn</th>
+                                    <th ng-show="postmanagement.user.permission!='user'" class="th text-center">Tài Khoản
+                                    </th>
+                                    <th class="th text-center">Chi Tiết</th>
+                                    <th class="th text-center">Thao Tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="news in postmanagement.news | filter: searchFilter">
+                                    <td class="text-center">{{$index + 1}}</td>
+                                    <td class="text-center">{{news.tieude}}</td>
+                                    <td class="text-center">{{news.ngaydang}}</td>
+                                    <td class="text-center">{{news.ngayhethan}}</td>
+                                    <td ng-show="postmanagement.user.permission!='user'" ng-class="text-center">
+                                        {{news.landlord[0].hoten}}</td>
+                                    <td class="text-center"><a href="/detailroom/{{news.mabd}}">Xem</td>
+                                    <td>
+
+                                        <button id="btn2" style="padding-top: 5px;padding-bottom: 5px;"
+                                            class="btn btn-danger"
+                                            ng-click="postmanagement.delete(news.mabd, postmanagement.currentPage)">Xóa</button>
+                                        <button ng-show="news.trangthai=='Chưa duyệt' && postmanagement.user.permission!='user'" id="btn2"
+                                            style="padding-top: 5px;padding-bottom: 5px;;" class="btn btn-warning"
+                                            ng-click="postmanagement.browse(news._id,postmanagement.currentPage)">Duyệt</button>
+
+                                        <button ng-show="news.trangthai=='Đã duyệt'" id="btn2"
+                                            style="padding-top: 5px;padding-bottom: 5px;;" class="btn btn-success">Đã
+                                            Duyệt</button>
+
+                                            <button ng-show="news.trangthai=='Chưa duyệt' && postmanagement.user.permission=='user'" id="btn2"
+                                            style="padding-top: 5px;padding-bottom: 5px;;" class="btn btn-warning">Chưa
+                                            Duyệt</button>
+                                            <a href="/editpost/{{news._id}}" ng-show="news.trangthai=='Chưa duyệt' && postmanagement.user.permission=='user'" id="btn2"
+                                            style="padding-top: 5px;padding-bottom: 5px;;" class="btn btn-primary">Sửa</button>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Thông tin cá nhân -->
+    </div>
+</div>

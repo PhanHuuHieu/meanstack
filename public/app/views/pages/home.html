@@ -1,0 +1,818 @@
+<style>
+  button[disabled],
+  input[disabled],
+  button:disabled {
+    cursor: default;
+    background-color: rgb(147, 168, 168);
+    border: 1px solid aquamarine;
+  }
+
+  body {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+  }
+
+  header {
+    background-color: #2A4453;
+    position: relative;
+    height: 90px;
+  }
+
+  .logo {
+    margin-top: 1%;
+  }
+
+  .login-nav {
+    display: inline-block;
+    /* float: right;     */
+  }
+
+  .login-nav a {
+    margin-left: 5px;
+    color: #9fdbfc;
+    font-weight: 100;
+  }
+
+  .login-nav a:hover {
+    text-decoration: none;
+    color: #E38B23;
+  }
+
+  #logout {
+    color: red;
+  }
+
+  #logout:hover {
+    text-decoration: none;
+    color: #E38B23;
+  }
+
+  /*=========================================== end header ================================ */
+  .menu-bar {
+    background-color: #3d52b9;
+  }
+
+  .active-item {
+    background-color: #C4BFBF;
+  }
+
+  .menu-bar ul li a {
+    color: #fff;
+  }
+
+  .menu-bar ul li a:hover {
+    color: #434A92;
+    background-color: #1ABB9A;
+    font-weight: bold;
+  }
+
+  #dangtin {
+    background-color: #DA4343;
+    color: white;
+  }
+
+  #dangtin a:hover {
+    text-decoration: none;
+    background-color: #1ABB9A;
+    color: #434A92;
+  }
+
+  /*========================================== end menu-bar=========================== */
+  .search-info {
+    background: #9fdbfc;
+    height: auto;
+  }
+
+  .form-search {
+    height: 140px;
+  }
+
+  .form-search {
+    margin-top: 5px;
+  }
+
+  ul li {
+    list-style-type: none;
+  }
+
+  .image-room {
+    margin-top: 10px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .ul-list li {
+    font-size: 12px;
+  }
+
+  .my-footer {
+    margin-top: 3.4%;
+    height: 50px;
+    background-color: #a0a0a0;
+  }
+
+  .li-newinfo {
+    border-bottom: 1px solid #d0d0d0;
+  }
+
+  .method {
+    background: rgba(60, 220, 147, 0.61);
+    margin-top: 3.6%;
+  }
+
+  .napcash {
+    margin-left: 5%;
+  }
+
+  .thecao {
+    margin-top: 10%;
+  }
+
+  .list_phong {
+    margin-top: 5%;
+  }
+
+  /*------------InDex------------*/
+
+  /*---------DangTin------------*/
+  /*.form_title{
+    text-transform: uppercase;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 10%;
+    background-color: #3d52b9;
+  }*/
+  .red_require {
+    color: red;
+  }
+
+  .block_term {
+    margin-top: 10.5%;
+  }
+
+  /*-------Login-----------*/
+  .login_custom_inner {
+    background-image: url(/img/hinh1.jpg);
+
+    margin-top: 4%;
+    height: 440px;
+    width: 100%;
+
+  }
+
+  .DNDK {
+    font-size: 200%;
+  }
+
+  .login-tabs {
+    margin-left: -5%;
+    text-align: center;
+  }
+
+  .dangky-login {
+    padding: 1.5%;
+    background-color: white;
+  }
+
+  .dangnhap-login {
+    padding: 1.5%
+  }
+
+  .tab-content {
+    margin-top: 5%;
+    margin-left: 10%;
+    color: #80ffff;
+  }
+
+  .lb {
+    padding: 0 5px 0 5px;
+    background-color: rgba(0, 0, 0, 0.28);
+    color: #80ffff;
+  }
+
+  .QMK {
+    color: red;
+  }
+
+  .login_custom_inner-register {
+    background-image: url(/img/hinh1.jpg);
+    margin-top: 4%;
+    height: 630px;
+    width: 100%;
+  }
+
+  .tab-content-register {
+    margin-top: 3%;
+    margin-left: 10%;
+    color: #0006fb;
+
+  }
+
+  .dangnhap-register {
+    padding: 1.5%;
+    background-color: white;
+  }
+
+  .dangky-register {
+    padding: 1.5%;
+  }
+
+  /*----Forgrt pass--------*/
+  .row-forget {
+    height: 507.5px;
+  }
+
+  .entry-title {
+    background-color: #fff;
+    margin-top: 0%;
+  }
+
+  .post-57602 {
+    margin-top: 7.5%;
+    padding: 10%;
+    border-radius: 20px;
+    box-shadow: 0px 2px 2px 0px rgba(10, 10, 10, 5), 5px 7px 7px 5px rgba(255, 255, 255, 0.5) inset;
+  }
+
+  .entry-title1 {
+    text-align: center;
+    color: #51f56e;
+    margin-top: -1%;
+    margin-bottom: 7%;
+  }
+
+  #email1 {
+    color: #51f56e;
+  }
+
+  .tml {
+    margin-top: 0%;
+  }
+
+  .message {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid #e6db55;
+    padding: 4px;
+    color: #ea0000;
+    text-align: justify;
+    font-size: 14px;
+  }
+
+  .tml-user-login-wrap {
+    margin-top: 2%;
+    font-size: 15px;
+  }
+
+  .text_input {
+    margin-top: -1%;
+  }
+
+  .tml-submit-wrap {
+    margin-top: 20px;
+  }
+
+  .input1 {
+    padding: 0.5%;
+  }
+
+  .input {
+    min-width: 40px;
+  }
+
+  /*-----Chi tiÃ¡ÂºÂ¿t bÄ‚Â i Ã„â€˜Ã„Æ’ng ----*/
+  .navbar_scroll {
+    background-color: #f3f3f3;
+  }
+
+  .navbar_scroll ul li a:hover {
+    background-color: #f54e64;
+    color: #fff;
+    height: 45px;
+  }
+
+  .nav-scroll {
+    height: 45px;
+  }
+
+  #section1 {
+    margin-top: 2%;
+    border: 1px solid #eee;
+  }
+
+  #section1 p {
+    font-size: 12px;
+    margin: 1% 0% 0% 1%;
+  }
+
+  #thongtin {
+    padding-bottom: 0%;
+  }
+
+  .header_thongtin {
+    padding: 1% 0% 1% 1%;
+    border-top: 1px solid #eee;
+    background-color: #f9f9f9;
+  }
+
+  .body_thongtin {
+    padding-top: 1%;
+    border-top: 1px solid #eee;
+  }
+
+  #section2 {
+    margin-top: 2%;
+    border: 1px solid silver;
+  }
+
+  #section2 p {
+    font-size: 15.3px;
+  }
+
+  #section3 {
+    margin-top: 2%;
+  }
+
+  #section4 {
+    margin-top: 2%;
+  }
+
+  .showpic {
+    width: 100%;
+  }
+
+  .carousel {
+    margin-bottom: 2%;
+    margin-top: 2%;
+  }
+
+  #map {
+    margin-top: 2%;
+    width: 790px;
+    height: 400px;
+    background: yellow;
+    margin-bottom: 2%
+  }
+
+  .head_section {
+    background-color: #f3f3f3;
+  }
+
+  #map_canvas {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 100%;
+    height: 500px;
+    border: solid 1px #ccc;
+  }
+
+  /*-------------Account-----------*/
+  .boss-account {
+    height: auto;
+    margin-bottom: 50px;
+  }
+
+  .title-account-div {
+    margin-top: 1%;
+  }
+
+  .title-account {
+    margin-top: 19%;
+    border-bottom: 1px solid #d0d0d0;
+  }
+
+  .title123 {
+    color: black;
+  }
+
+  .boss-account ul li {
+    padding: 2px;
+  }
+
+  .boss-account a ul li:hover {
+    color: black;
+    text-decoration: none;
+  }
+
+  .boss-account a:hover {
+    text-decoration: none;
+  }
+
+  .title-account li:hover {
+    background-color: #ddefff;
+  }
+
+  /*
+  -------Ã„ï¿½Ã¡Â»â€¢i MK--------*/
+
+
+  .table_MK {
+    margin-top: 4%;
+    margin-left: 25%;
+  }
+
+  .title-ul {
+    margin-top: 0%;
+  }
+
+  .li1 {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-bottom: 1px solid #d0d0d0;
+  }
+
+  #thongtin {
+    color: #142680;
+    margin-left: 2%;
+  }
+
+  .btn1_chung {
+    margin-top: 3%;
+  }
+
+  #btn1 {
+    float: right;
+    margin-left: 3%;
+  }
+
+  .active_ac {
+    background-color: #c4d2e7;
+  }
+
+  /*----------QuanLyBaiDang--------*/
+  .shadow {
+    box-shadow: 0 2px 8px 8px rgba(0, 0, 0, 0.09), 0 4px 20px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .fields {
+    width: 95%;
+    height: auto;
+    padding-left: 5%;
+    padding-bottom: 4%;
+    margin-top: 5%;
+  }
+
+  .table_manage {
+    margin-top: 4%;
+  }
+
+  .table_manage_posts {
+    height: 250px;
+  }
+
+  .paging {
+    margin-top: 30px;
+  }
+
+  .btn-group {
+    float: right;
+  }
+
+  #QL {
+    color: #142680;
+    margin-left: 10%;
+  }
+
+  .table_posts {
+    border: 1px solid rgb(221, 221, 221);
+    border-bottom: 2px solid rgb(221, 221, 221);
+  }
+
+  .table_posts th,
+  .table_posts td {
+    border: 1px solid rgb(221, 221, 221);
+
+  }
+
+  #btn2 {
+    font-size: 9px;
+  }
+
+  #myModal {
+    margin-top: 15%;
+  }
+
+  #modal_btn1 {
+    margin-left: 18%;
+    margin-right: 10%;
+    padding-left: 9%;
+    padding-right: 9%;
+  }
+
+  .table_manage_posts a:hover {
+    text-decoration: none;
+  }
+
+  /*--------Admin----------*/
+  #btn_duyet {
+    font-size: 9px;
+    padding-left: 13%;
+    padding-right: 13%;
+  }
+
+  #ThongBao {
+    margin-top: 10%;
+  }
+
+  .imformation {
+    margin-left: 28%;
+    margin-top: 5%;
+  }
+
+  #status {
+    color: #d9534f;
+  }
+
+  .menu-account ul li a:hover {
+    height: 50px;
+    color: white;
+    background-color: #4f639e;
+  }
+
+  .menu-account_ul {
+    height: 30px;
+  }
+
+  /*--changepass--*/
+  .post-57 {
+    margin-top: 5%;
+    padding: 8%;
+    border-radius: 20px;
+    box-shadow: 0px 2px 2px 0px rgba(10, 10, 10, 5), 5px 7px 7px 5px rgba(255, 255, 255, 0.5) inset;
+  }
+
+  .control-label1 {
+    padding: 1% 5% 1% 3%;
+    color: #51f56e;
+    background-color: rgba(0, 0, 0, 0.28);
+  }
+
+  #lab {
+    color: #51f56e;
+    background-color: rgba(0, 0, 0, 0.28);
+  }
+
+  #theme-my-login {
+    margin-bottom: -2%;
+  }
+
+  /*---map--*/
+  #ip_search {
+    margin-top: 11px;
+    padding: 7px;
+  }
+
+  #logout {
+    color: red;
+  }
+
+  .table_manage_posts {
+    margin-bottom: 91px;
+  }
+
+  .table_manage_posts th {
+    font-size: 95%;
+    font-weight: bold;
+    text-align: center;
+    ;
+  }
+
+  .table_manage_posts td {
+    font-size: 90%;
+  }
+
+  .my-footer {
+    margin-top: 3.4%;
+    height: 50px;
+    background-color: #a0a0a0;
+  }
+
+  .text-muted {
+    margin-top: 5px;
+  }
+</style>
+
+<div class="search-info">
+  <div class="container">
+    <form name="searchForm" ng-submit="home.search(home.searchdata)" class="form-search" style="margin-top:12px ;">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-6 ">
+          <div class="form-group">
+            <select name="categorynews" ng-model="home.searchdata.categorynews" id="search_room_type" class="form-control">
+              <option value="">--Chọn loại phòng--</option>
+              <option value="Phòng trọ, nhà trọ">Phòng trọ, nhà trọ</option>
+              <option value="Nhà thuê nguyên căn">Nhà thuê nguyên căn</option>
+              <option value="Tìm người ở ghép">Tìm người ở ghép</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6 ">
+          <div class="form-group">
+            <select name="price" ng-model="home.searchdata.price" name="giaphong" id="" class="form-control price">
+              <option value="" selected="selected">--Chọn mức giá--</option>
+              <option value="0">< 500.000</option>
+               <option value="1">500.000 - 1.000.000 </option>
+              <option value="2">1.000.000 - 2.5000.000</option>
+              <option value="3"> >2.500.000</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6 ">
+          <div class="form-group">
+            <select id="search_doituong" name="sex" ng-model="home.searchdata.sex" class="form-control">
+              <option value="" selected='selected'>--Chọn đối tượng--</option>
+              <option value="Tất cả">Tất cả</option>
+              <option value="Nam">Nam</option>
+              <option value="Nữ">Nữ</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6 ">
+          <div class="form-group">
+            <select name="acreage" ng-model="home.searchdata.acreage" id="search_dientich"  class="form-control">
+              <option value="" selected='selected'>--Chọn diện tích--</option>
+              <option value="0"><20 m2</option>
+                  <option value="1">20 m2 - 30 m2</option>
+              <option value="2">>30 m2</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6 ">
+          <div class="form-group">
+            <select id="select_tinh_tp" class="form-control tinh-tp" name="city"
+              ng-model="home.searchdata.city" ng-change="onChangeCities(home.searchdata.city);">
+              <option value="" selected>--Chọn TP/Tỉnh--</option>
+              <option ng-model="home.searchData.city" ng-repeat="cities in home.cities" ng-value="cities.matp">
+                {{cities.tentp}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6 ">
+          <div class="form-group">
+
+            <select ng-model="home.searchdata.dictric" id="select_quan_huyen"
+              ng-change="onChangeDistrics(home.searchdata.dictric);" class="form-control district" name="dictric">
+              <option value="" data-flag="0">--Chọn Quận/Huyện--</option>
+              <option ng-repeat="districs in home.districs" value="{{districs.maquan}}">{{districs.tenquan}}</option>
+            </select>
+
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6 padding5">
+          <div class="form-group">
+            <select ng-model="home.searchdata.commune" id="select_phuong_xa"
+              ng-change="onChangeCommunes(home.searchdata.commune);" class="form-control district" name="commune">
+              <option value="" data-flag="0">--Chọn Phường/xã--</option>
+              <option ng-repeat="commune in home.communes" value="{{commune.maphuong}}">{{commune.tenphuong}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6 padding5">
+          <div class="form-group">
+            <select ng-model="home.searchdata.street" id="select_phuong_xa" class="form-control district" name="street">
+              <option value="" data-flag="0">--Chọn Đường--</option>
+              <option ng-repeat="street in home.streets" value="{{street.maduong}}">{{street.tenduong}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 ">
+          <input type="submit" class="btn btn-warning pull-right" value="Tìm kiếm">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<nav class="navbar " ng-show="home.notsearch">
+  <div class="container">
+    <h3 class="title-info"> Thông tin phòng trọ mới nhất</h3>
+  </div>
+</nav>
+<div class="main-contain" ng-show="home.notsearch">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 list-postt">
+        <table class="table" id="results">
+          <tr></tr>
+          <ul ng-if="home.pages>1" class="pagination">
+            <li ng-class="{disabled :home.currentPage === 1}">
+              <a ng-click="home.getPage(1)">First</a>
+            </li>
+            <li ng-class="{disabled:home.currentPage === 1}">
+              <a ng-click="home.getPage(home.currentPage - 1)">Previous</a>
+            </li>
+            <li ng-repeat="page in home.pager" ng-class="{active:home.currentPage === page}">
+              <a ng-click="home.getPage(page)">{{page}}</a>
+            </li>
+            <li ng-class="{disabled:home.currentPage >= home.pages}">
+              <a ng-class="{disabled:home.currentPage >= home.pages}"
+                ng-click="home.getPage(home.currentPage + 1)">Next</a>
+            </li>
+            <li ng-class="{disabled:home.currentPage >= home.pages}">
+              <a ng-click="home.getPage(home.pages)">Last</a>
+            </li>
+          </ul>
+          <tr ng-repeat="news in home.news">
+            <td>
+              <div class="row">
+                <div class="col-sm-2 col-md-2 col-xs-2">
+                  <a [routerLink]="['/detail_room/', news.mabd]">
+                    <img src="../../../assets/images/{{news.anhbia}}" alt="anh" class="image-room">
+                  </a>
+                </div>
+                <div class="col-sm-9 col-md-9 col-xs-9" style="margin-left: 30px;">
+                  <ul class="ul-list list-group" style="line-height: 22px;">
+                    <li class="header-info">
+                      <a href="/detailroom/{{news.mabd}}"
+                        style="font-size: 14px; color: red; font-weight: 300;">{{news.tieude}}</a>
+                    </li>
+                    <!-- <li class="info" id="mota">Mô tả: <span>{{news.mota}}</span></li> -->
+                    <li>Khu vực: <strong>{{news.address[0].quan_huyen}}, {{news.address[0].xa_phuong}}</strong></li>
+                    <li>Ngày đăng: <strong>{{news.ngaydang}}</strong> </li>
+                    <li class="price">Diện tích: <strong>{{news.dientich}} m²</strong> </li>
+                    <li style="font-size: 17px; color: green;"><strong>Giá: {{news.giaphong}} VND</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+        </table>
+        <hr>
+        <div id="pageNavPosition"></div>
+      </div>
+      <div class="col-md-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">TIN MỚI ĐĂNG</h3>
+          </div>
+          <div class="panel-body">
+            <tr ng-repeat="new in home.newnews[0]">
+              <td>
+                <div style="font-size: 11.5px;">
+                  <li class="header-info" style="list-style:none;">
+                    <a href="/detailroom/ {{home.newnews[0].mabd}}"
+                      style="list-style:none;font-size: 18px; color: red; font-weight: 300;">{{home.newnews[0].tieude}}</a>
+                  </li>
+                  <a href="/detailroom/{{home.newnews[0].mabd}}" style="text-decoration: none;">
+                    <span style="display: block; color: blue;" class="tinmd">{{home.newnews[0].mota}}</span>
+                  </a>
+                  <span
+                    style="display: block; color: green; margin-top: 4px; font-size: 15px; font-weight: bold;">{{home.newnews[0].giaphong}}
+                    VNĐ</span>
+                </div>
+              <td>
+                <hr />
+
+            </tr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Search -->
+<br>
+<h3 ng-show="!home.notsearch" style="color:teal" class="text-center">{{home.searchlength}} Kết Quả Được Tìm Thấy</h3> <br>
+<div class="main-contain" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 list-postt">
+        <table class="table" id="results">
+          <tr></tr>
+          <tr ng-repeat="news in home.searchnews">
+            <td>
+              <div class="row">
+                <div class="col-sm-2 col-md-2 col-xs-2">
+                  <a [routerLink]="['/detail_room/', news.mabd]">
+                    <img src="../../../assets/images/{{news.anhbia}}" alt="anh" class="image-room">
+                  </a>
+                </div>
+                <div class="col-sm-9 col-md-9 col-xs-9" style="margin-left: 30px;">
+                  <ul class="ul-list list-group" style="line-height: 22px;">
+                    <li class="header-info">
+                      <a href="/detailroom/{{news.mabd}}"
+                        style="font-size: 14px; color: red; font-weight: 300;">{{news.tieude}}</a>
+                    </li>
+                    <!-- <li class="info" id="mota">Mô tả: <span>{{news.mota}}</span></li> -->
+                    <li>Khu vực: <strong>{{news.address[0].quan_huyen}}, {{news.address[0].xa_phuong}}</strong></li>
+                    <li>Ngày đăng: <strong>{{news.ngaydang}}</strong> </li>
+                    <li class="price">Diện tích: <strong>{{news.dientich}} m²</strong> </li>
+                    <li style="font-size: 17px; color: green;"><strong>Giá: {{news.giaphong}} VND</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+        </table>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>

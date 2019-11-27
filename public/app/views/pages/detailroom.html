@@ -1,0 +1,285 @@
+<style>
+
+.arrow {
+    cursor: pointer;
+    display: block;
+    height: 64px;
+    margin-top: -35px;
+    outline: medium none;
+    position: absolute;
+    top: 50%;
+    width: 64px;
+    z-index: 5;
+}
+.arrow.prev {
+    background-image: url("images/prev.png");
+    left: 20px;
+    opacity: 0.2;
+    transition: all 0.2s linear 0s;
+}
+.arrow.next {
+    background-image: url("images/next.png");
+    opacity: 0.2;
+    right: 20px;
+    transition: all 0.2s linear 0s;
+}
+.arrow.prev:hover{
+    opacity:1;
+}
+.arrow.next:hover{
+    opacity:1;
+}
+
+
+.nav {
+    bottom: -4px;
+    display: block;
+    z-index: 5;
+}
+.nav li {
+    /* border: 5px solid #AAAAAA;
+    border-radius: 5px; */
+    cursor: pointer;
+    display: inline-block;
+    /* height: 30px; */
+    /* margin: 0 8px; */
+    position: relative;
+    /* width: 50px; */
+}
+.nav li.active {
+    border: 5px solid #FFFFFF;
+}
+.nav li img {
+  border: 5px solid #AAAAAA;
+    border-radius: 5px;
+    width: 40px;
+    height: 30px;
+}
+
+.slider {
+    border: 15px solid #FFFFFF;
+    border-radius: 5px;
+    height: 500px;
+    margin: 20px auto;
+    position: relative;
+    width: 800px;
+    
+}
+@media (max-width: 900px) {
+    .logo img {
+        width: 60%;
+    }
+    .slider {
+        height: 312px;
+        width: 500px;
+    }
+    .slider .slide {
+        width: 100%;
+    }
+}
+@media (max-width: 550px) {
+    .logo img {
+        width: 60%;
+    }
+    .slider {
+        height: 188px;
+        width: 300px;
+    }
+    .slider .slide {
+        width: 100%;
+    }
+    .nav {
+        height: 28px;
+    }
+    .nav li {
+        border: 3px solid #AAAAAA;
+        border-radius: 3px;
+        height: 15px;
+        width: 25px;
+    }
+}
+
+</style>
+
+
+<div class="container-fluid">
+  <div class="row col-sm-12">
+    <div class="col-sm-9">
+      <div class="header-detail">
+        <h3>{{detailroom.detailnews[0].tieude}}</h3>
+      </div>
+
+      <div data-spy="scroll" data-target=".navbar" data-offset="50">
+
+        <nav class="navbar_scroll">
+          <div class="container-fluid nav-scroll">
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li><a href="#section1">THÔNG TIN CHUNG</a></li>
+                <li><a href="#section2">MÔ TẢ CHI TIẾT</a></li>
+                <li><a href="#section3">HÌNH ẢNH</a></li>
+                <!-- <li><a href="#section4">BẢN ĐỒ</a></li> -->
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div id="section1" class="container-fluid">
+        <div class="thongtin row">
+          <div class="header_thongtin col-sm-2">
+            <p style="margin-top: 5px;"><strong>Địa chỉ:</strong></p>
+          </div>
+          <div class="body_thongtin col-sm-10">
+            {{detailroom.detailnews[0].address[0].diachichinhxac}}
+          </div>
+        </div>
+        <div class="thongtin row">
+          <div class="header_thongtin col-sm-2">
+            <p><strong>Loại tin:</strong></p>
+          </div>
+          <div class="body_thongtin col-sm-4">
+            {{detailroom.detailnews[0].loaitin}}
+          </div>
+          <div class="header_thongtin col-sm-2">
+            <p><strong>Ngày đăng tin:</strong></p>
+          </div>
+          <div class="body_thongtin col-sm-4">
+            {{detailroom.detailnews[0].ngaydang}}
+          </div>
+        </div>
+        <div class="thongtin row">
+          <div class="header_thongtin col-sm-2">
+            <p><strong>Người đăng:</strong></p>
+          </div>
+          <div class="body_thongtin col-sm-4">
+            {{detailroom.detailnews[0].landlord[0].hoten}}
+          </div>
+          <div class="header_thongtin col-sm-2">
+            <p><strong>Điện thoại:</strong></p>
+          </div>
+          <div class="body_thongtin col-sm-4">
+            {{detailroom.detailnews[0].sodt}}
+          </div>
+        </div>
+        <div class="thongtin row">
+          <div class="header_thongtin col-sm-2">
+            <p><strong>E-mail:</strong></p>
+            
+          </div>
+          <div class="body_thongtin col-sm-4">
+             {{detailroom.detailnews[0].landlord[0].email}}
+          </div>
+          <div class="header_thongtin col-sm-2">
+            <p><strong>Đối tượng:</strong></p>
+          </div>
+          <div class="body_thongtin col-sm-4">
+            {{detailroom.detailnews[0].doituong}}
+          </div>
+        </div>
+        <div class="thongtin row">
+          <div class="header_thongtin col-sm-2">
+            <p><strong>Diện tích:</strong></p>
+          </div>
+          <div class="body_thongtin col-sm-4">
+              {{detailroom.detailnews[0].dientich}}
+          </div>
+          <div class="header_thongtin col-sm-2">
+            <p><strong>Giá thuê:</strong></p>
+          </div>
+          <div class="body_thongtin col-sm-4">
+            {{detailroom.detailnews[0].giaphong}}VND
+          </div>
+        </div>
+      </div>
+      <div id="section2" class="container-fluid">
+        <div class="head_section row">
+          <h4 style="padding: 8px;"><strong>THÔNG TIN MÔ TẢ</strong></h4>
+        </div>
+        <div class="row" style="padding: 8px;">
+          <p style="line-height: 200%;">{{detailroom.detailnews[0].mota}}</p>
+        </div>
+      </div>
+      <div id="section3" class="container-fluid">
+        <div class="head_section row">
+          <h4 style="padding: 8px;"><strong>HÌNH ẢNH</strong></h4>
+        </div>
+        <div class="container-fluid">
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <!-- <img style="width: 100%; height: 400px;" width="100" height="100" class="showpic"
+                  src="images/${baidang.mabd}/${activeImg}" alt="..."> -->
+                  <!-- <img style="width: 100%; height: 400px;" width="100" height="100" class="showpic"
+                  src="../../../assets/images/{{detailroom.detailnews[0].anhbia}}" alt="..."> 
+                   -->
+              </div>
+              <div >
+                <!-- <div class="item">
+                    <img style="width: 100%; height: 400px;" width="100" height="100" class="showpic"
+                    src="../../../assets/images/3.jpg" alt="..."> 
+                </div> -->
+              </div>
+              <!-- <c:forEach var="img" items="${list_img}">
+                <div class="item">
+                  <img style="width: 100%; height: 400px;" width="100" height="100" class="showpic"
+                    src="images/${baidang.mabd}/${img}" alt="...">
+                </div>
+              </c:forEach> -->
+            </div>
+
+            <div class="container slider">
+
+              <!-- enumerate all photos -->
+              <img ng-repeat="photo in photos" style="width: 175%; height: 500px; margin-left: -38%;"  class="slide" ng-swipe-right="showPrev()" ng-swipe-left="showNext()" ng-show="isActive($index)" ng-src="../../../assets/images/{{photo.src}}" />
+      
+              <!-- extra navigation controls -->
+              <ul class="nav">
+                  <li ng-repeat="photo in photos" ng-class="{'active':isActive($index)}">
+                      <img ng-src="../../../assets/images/{{photo.src}}" alt="{{photo.desc}}" title="{{photo.desc}}" ng-click="showPhoto($index);" />
+                  </li>
+
+              </ul>
+      
+          </div>   
+          </div>
+        </div>
+
+      </div>
+      <br><br>  <br><br>
+      <!-- <div id="section4" class="container-fluid">
+        <div class="head_section row">
+          <h4 style="padding: 8px;"><strong>BẢN ĐỒ</strong></h4>
+        </div>
+        <input style="display: none;" value="{{detailroom.detailnews[0].address[0]}}" id="ip_toado" type="text" class="control"
+          name="diachi" size="40">
+        <div id="map-canvas" style="width:100%; height:400px; margin-top: 1px;"></div>
+      </div> -->
+    </div>
+    <div class="col-sm-3 " style="margin-top: 60px;">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">TIN MỚI ĐĂNG</h3>
+        </div>
+        <div class="panel-body">
+          <c:forEach var="item" items="${tinmoidang}">
+            <div style="font-size: 11.5px;">
+             <h6> {{detailroom.detailnews[0].tieude}}</h6>
+              <a href="/detailroom/{{detailroom.detailnews[0].mabd}}" style="text-decoration: none;">
+                <span style="display: block; color: blue;" class="tinmd">{{detailroom.newnews[0].mota}}</span>
+              </a>
+              <span style="display: block; color: green; margin-top: 4px;">{{detailroom.newnews[0].giaphong}} VNĐ</span>
+            </div>
+            <hr />
+          </c:forEach>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQl0XVU1goVsDeqX8z46G8R4grIxd_nSQ&libraries=places&callback=initAutocomplete"
+  async defer></script> -->

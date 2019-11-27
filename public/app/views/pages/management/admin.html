@@ -1,0 +1,133 @@
+<div class="main-content">
+    <div class="col-md-2" style="height: 100vh;">
+        <div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+            <aside class="sidebar-left">
+                <nav class="navbar navbar-inverse" style="border-color: #174034; background-color: #174034;">
+                    <div class="navbar-header">
+                        <h1><a class="navbar-brand" href="index.html"><span class="fa fa-area-chart"></span><span
+                                    class="dashboard_text">Admin manager</span></a></h1>
+                    </div>
+                    <div class=" navbar-collapse">
+                        <ul class="sidebar-menu">
+                            <li class="treeview">
+                                <a ng-show="admin.permission!='user'" ng-click="admin.browseClick();"><i class="glyphicon glyphicon-certificate"></i><span>Duyệt
+                                        tin</span></a>
+                            </li>
+                            <li class="treeview">
+                                <a ng-click="admin.getAllNews();"><i class="glyphicon glyphicon-bed"></i><span>Quản lí bài đăng</span></a>
+                            </li>
+                            <li class="treeview">
+                                <a href="/management"><i class="glyphicon glyphicon-list-alt"></i><span>Quản Lý
+                                        user</span></a>
+                            </li>
+                            <li class="treeview">
+                                <a href="/profile"><i class="glyphicon glyphicon-bitcoin"></i> <span>Tài khoản</span></a>
+                            </li>
+                            <li class="treeview">
+                                <a href="widgets.html"><i class="glyphicon glyphicon-leaf"></i> <span>Nhà cung
+                                        cấp</span></a>
+                            </li>
+                            <li class="treeview">
+                                <a href="#"><i class="glyphicon glyphicon-duplicate"></i> <span>Nhật ký</span>
+                                    <small class="label pull-right label-info">08</small>
+                                </a>
+                            </li>
+                            <li class="treeview">
+                                <a href="index.html"><i class="glyphicon glyphicon-retweet"></i> <span>Thu
+                                        chi</span></a>
+                            </li>
+                            <li class="treeview">
+                                <a href="index.html"><i class="glyphicon glyphicon-user"></i> <span>Tài khoản</span></a>
+                            </li>
+                            <li class="treeview">
+                                <a href="#"><i class="glyphicon glyphicon-equalizer"></i><span>Thống kê</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+        </div>
+    </div>
+    <br>
+    <div class="col-md-9">
+        <div class="" style="margin-left: 40%;">
+            <h2 ng-show="isBrowse==false">Duyệt Bài Đăng</h2>
+            <h2 ng-show="isBrowse">Quản lí Bài Đăng</h2>
+        </div>
+        <br><br>
+        <div class="navbar-form" style="margin-left:-12px;">
+            <div class="form-group">
+                <!-- Search Input -->
+                <input type="text" class="form-control" name="search" placeholder="search for..."
+                    ng-model="searchFilter">
+            </div>
+            <button type="button" ng-click="admin.clear();" class="btn btn-default">Clear</button>
+            <!-- Advanced Search Button -->
+            <a href="/adminsearch">
+                <button type="button" class="btn btn-default">Advanced Search</button>
+            </a>
+        </div>
+        <br>
+        <ul class="pagination">
+            <li ng-class="{disabled :admin.currentPage === 1}">
+                <a ng-click="admin.pagination(1)">First</a>
+            </li>
+            <li ng-class="{disabled:admin.currentPage === 1}">
+                <a ng-click="admin.pagination(admin.currentPage - 1)">Previous</a>
+            </li>
+            <li ng-repeat="page in admin.pager" ng-class="{active:admin.currentPage === page}">
+                <a ng-click="admin.pagination(page)">{{page}}</a>
+            </li>
+            <li ng-class="{disabled:admin.currentPage >= admin.pages}">
+                <a ng-class="{disabled:admin.currentPage >= admin.pages}"
+                    ng-click="admin.pagination(admin.currentPage + 1)">Next</a>
+            </li>
+            <li ng-class="{disabled:admin.currentPage >= admin.pages}">
+                <a ng-click="admin.pagination(admin.pages)">Last</a>
+            </li>
+        </ul>
+        <div class="panel panel-info text-center">
+            <!-- Heading -->
+            <div class="panel-heading">
+                <strong>Bài Đăng</strong>
+            </div>
+            <!-- Start: Table -->
+
+        </div>
+        <div class="table">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr >
+                        <th  class="th text-center">STT</th>
+                        <th class="text-center" style="width: 600px;">Tiêu đề</th>
+                        <th class="th text-center">Ngày Đăng</th>
+                        <th class="th text-center">Ngày Hết Hạn</th>
+                        <th ng-show="admin.permission!='user'" class="th text-center">Tài Khoản</th>
+                        <th class="th text-center">Chi Tiết</th>
+                        <th class="th text-center">Thao Tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="news in admin.news | filter: searchFilter">
+                        <td class="text-center">{{$index + 1}}</td>
+                        <td class="text-center" >{{news.tieude}}</td>
+                        <td class="text-center">{{news.ngaydang}}</td>
+                        <td class="text-center">{{news.ngayhethan}}</td>
+                        <td ng-show="admin.permission!='user'" ng-class="text-center"> {{news.landlord[0].hoten}}</td>
+                        <td class="text-center"><a href="/detailroom/{{news.mabd}}">Xem</td>
+                        <td class="text-center">
+      
+                          <button id="btn2" style="padding-top: 5px;padding-bottom: 5px;" class="btn btn-danger"
+                          ng-click="admin.delete(news.mabd, admin.currentPage)">Xóa</button>
+                          <button ng-show="news.trangthai=='Chưa duyệt'" id="btn2" style="padding-top: 5px;padding-bottom: 5px;;" class="btn btn-warning"
+                          ng-click="admin.browse(news._id,admin.currentPage)">Duyệt</button>
+                          
+                          <button ng-show="news.trangthai=='Đã duyệt'" id="btn2" style="padding-top: 5px;padding-bottom: 5px;;" class="btn btn-success"
+                         >Đã Duyệt</button>
+                        
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

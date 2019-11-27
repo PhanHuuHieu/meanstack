@@ -1,0 +1,812 @@
+<style>
+        button[disabled],
+        input[disabled],
+        button:disabled {
+            cursor: default;
+            background-color: rgb(147, 168, 168);
+            border: 1px solid aquamarine;
+        }
+    
+        body {
+            font-family: "Ubuntu", sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+        }
+    
+        header {
+            background-color: #2A4453;
+            position: relative;
+            height: 90px;
+        }
+    
+        .logo {
+            margin-top: 1%;
+        }
+    
+        .login-nav {
+            display: inline-block;
+            /* float: right;     */
+        }
+    
+        .login-nav a {
+            margin-left: 5px;
+            color: #9fdbfc;
+            font-weight: 100;
+        }
+    
+        .login-nav a:hover {
+            text-decoration: none;
+            color: #E38B23;
+        }
+    
+        #logout {
+            color: red;
+        }
+    
+        #logout:hover {
+            text-decoration: none;
+            color: #E38B23;
+        }
+    
+        /*=========================================== end header ================================ */
+        .menu-bar {
+            background-color: #3d52b9;
+        }
+    
+        .active-item {
+            background-color: #C4BFBF;
+        }
+    
+        .menu-bar ul li a {
+            color: #fff;
+        }
+    
+        .menu-bar ul li a:hover {
+            color: #434A92;
+            background-color: #1ABB9A;
+            font-weight: bold;
+        }
+    
+        #dangtin {
+            background-color: #DA4343;
+            color: white;
+        }
+    
+        #dangtin a:hover {
+            text-decoration: none;
+            background-color: #1ABB9A;
+            color: #434A92;
+        }
+    
+        /*========================================== end menu-bar=========================== */
+        .search-info {
+            background: #9fdbfc;
+            height: 150px;
+        }
+    
+        .form-search {
+            height: 140px;
+        }
+    
+        .form-search {
+            margin-top: 5px;
+        }
+    
+        ul li {
+            list-style-type: none;
+        }
+    
+        .image-room {
+            margin-top: 10px;
+            width: 120px;
+            height: 120px;
+        }
+    
+        .ul-list li {
+            font-size: 12px;
+        }
+    
+        .my-footer {
+            margin-top: 3.4%;
+            height: 50px;
+            background-color: #a0a0a0;
+        }
+    
+        .li-newinfo {
+            border-bottom: 1px solid #d0d0d0;
+        }
+    
+        .method {
+            background: rgba(60, 220, 147, 0.61);
+            margin-top: 3.6%;
+        }
+    
+        .napcash {
+            margin-left: 5%;
+        }
+    
+        .thecao {
+            margin-top: 10%;
+        }
+    
+        .list_phong {
+            margin-top: 5%;
+        }
+    
+        /*------------InDex------------*/
+    
+        /*---------DangTin------------*/
+        /*.form_title{
+          text-transform: uppercase;
+          color: #fff;
+          padding: 10px;
+          margin-bottom: 20px;
+          margin-top: 10%;
+          background-color: #3d52b9;
+        }*/
+        .red_require {
+            color: red;
+        }
+    
+        .block_term {
+            margin-top: 10.5%;
+        }
+    
+        /*-------Login-----------*/
+        .login_custom_inner {
+            background-image: url(/img/hinh1.jpg);
+    
+            margin-top: 4%;
+            height: 440px;
+            width: 100%;
+    
+        }
+    
+        .DNDK {
+            font-size: 200%;
+        }
+    
+        .login-tabs {
+            margin-left: -5%;
+            text-align: center;
+        }
+    
+        .dangky-login {
+            padding: 1.5%;
+            background-color: white;
+        }
+    
+        .dangnhap-login {
+            padding: 1.5%
+        }
+    
+        .tab-content {
+            margin-top: 5%;
+            margin-left: 10%;
+            color: #80ffff;
+        }
+    
+        .lb {
+            padding: 0 5px 0 5px;
+            background-color: rgba(0, 0, 0, 0.28);
+            color: #80ffff;
+        }
+    
+        .QMK {
+            color: red;
+        }
+    
+        .login_custom_inner-register {
+            background-image: url(/img/hinh1.jpg);
+            margin-top: 4%;
+            height: 630px;
+            width: 100%;
+        }
+    
+        .tab-content-register {
+            margin-top: 3%;
+            margin-left: 10%;
+            color: #0006fb;
+    
+        }
+    
+        .dangnhap-register {
+            padding: 1.5%;
+            background-color: white;
+        }
+    
+        .dangky-register {
+            padding: 1.5%;
+        }
+    
+        /*----Forgrt pass--------*/
+        .row-forget {
+            height: 507.5px;
+        }
+    
+        .entry-title {
+            background-color: #fff;
+            margin-top: 0%;
+        }
+    
+        .post-57602 {
+            margin-top: 7.5%;
+            padding: 10%;
+            border-radius: 20px;
+            box-shadow: 0px 2px 2px 0px rgba(10, 10, 10, 5), 5px 7px 7px 5px rgba(255, 255, 255, 0.5) inset;
+        }
+    
+        .entry-title1 {
+            text-align: center;
+            color: #51f56e;
+            margin-top: -1%;
+            margin-bottom: 7%;
+        }
+    
+        #email1 {
+            color: #51f56e;
+        }
+    
+        .tml {
+            margin-top: 0%;
+        }
+    
+        .message {
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid #e6db55;
+            padding: 4px;
+            color: #ea0000;
+            text-align: justify;
+            font-size: 14px;
+        }
+    
+        .tml-user-login-wrap {
+            margin-top: 2%;
+            font-size: 15px;
+        }
+    
+        .text_input {
+            margin-top: -1%;
+        }
+    
+        .tml-submit-wrap {
+            margin-top: 20px;
+        }
+    
+        .input1 {
+            padding: 0.5%;
+        }
+    
+        .input {
+            min-width: 40px;
+        }
+    
+        /*-----Chi tiÃ¡ÂºÂ¿t bÄ‚Â i Ã„â€˜Ã„Æ’ng ----*/
+        .navbar_scroll {
+            background-color: #f3f3f3;
+        }
+    
+        .navbar_scroll ul li a:hover {
+            background-color: #f54e64;
+            color: #fff;
+            height: 45px;
+        }
+    
+        .nav-scroll {
+            height: 45px;
+        }
+    
+        #section1 {
+            margin-top: 2%;
+            border: 1px solid #eee;
+        }
+    
+        #section1 p {
+            font-size: 12px;
+            margin: 1% 0% 0% 1%;
+        }
+    
+        #thongtin {
+            padding-bottom: 0%;
+        }
+    
+        .header_thongtin {
+            padding: 1% 0% 1% 1%;
+            border-top: 1px solid #eee;
+            background-color: #f9f9f9;
+        }
+    
+        .body_thongtin {
+            padding-top: 1%;
+            border-top: 1px solid #eee;
+        }
+    
+        #section2 {
+            margin-top: 2%;
+            border: 1px solid silver;
+        }
+    
+        #section2 p {
+            font-size: 15.3px;
+        }
+    
+        #section3 {
+            margin-top: 2%;
+        }
+    
+        #section4 {
+            margin-top: 2%;
+        }
+    
+        .showpic {
+            width: 100%;
+        }
+    
+        .carousel {
+            margin-bottom: 2%;
+            margin-top: 2%;
+        }
+    
+        #map {
+            margin-top: 2%;
+            width: 790px;
+            height: 400px;
+            background: yellow;
+            margin-bottom: 2%
+        }
+    
+        .head_section {
+            background-color: #f3f3f3;
+        }
+    
+        #map_canvas {
+            margin-top: 2%;
+            margin-bottom: 2%;
+            width: 100%;
+            height: 500px;
+            border: solid 1px #ccc;
+        }
+    
+        /*-------------Account-----------*/
+        .boss-account {
+            height: auto;
+            margin-bottom: 50px;
+        }
+    
+        .title-account-div {
+            margin-top: 1%;
+        }
+    
+        .title-account {
+            margin-top: 19%;
+            border-bottom: 1px solid #d0d0d0;
+        }
+    
+        .title123 {
+            color: black;
+        }
+    
+        .boss-account ul li {
+            padding: 2px;
+        }
+    
+        .boss-account a ul li:hover {
+            color: black;
+            text-decoration: none;
+        }
+    
+        .boss-account a:hover {
+            text-decoration: none;
+        }
+    
+        .title-account li:hover {
+            background-color: #ddefff;
+        }
+    
+        /*
+        -------Ã„ï¿½Ã¡Â»â€¢i MK--------*/
+    
+    
+        .table_MK {
+            margin-top: 4%;
+            margin-left: 25%;
+        }
+    
+        .title-ul {
+            margin-top: 0%;
+        }
+    
+        .li1 {
+            margin-top: 3%;
+            margin-bottom: 3%;
+            border-bottom: 1px solid #d0d0d0;
+        }
+    
+        #thongtin {
+            color: #142680;
+            margin-left: 2%;
+        }
+    
+        .btn1_chung {
+            margin-top: 3%;
+        }
+    
+        #btn1 {
+            float: right;
+            margin-left: 3%;
+        }
+    
+        .active_ac {
+            background-color: #c4d2e7;
+        }
+    
+        /*----------QuanLyBaiDang--------*/
+        .shadow {
+            box-shadow: 0 2px 8px 8px rgba(0, 0, 0, 0.09), 0 4px 20px 8px rgba(0, 0, 0, 0.15);
+        }
+    
+        .fields {
+            width: 95%;
+            height: auto;
+            padding-left: 5%;
+            padding-bottom: 4%;
+            margin-top: 5%;
+        }
+    
+        .table_manage {
+            margin-top: 4%;
+        }
+    
+        .table_manage_posts {
+            height: 250px;
+        }
+    
+        .paging {
+            margin-top: 30px;
+        }
+    
+        .btn-group {
+            float: right;
+        }
+    
+        #QL {
+            color: #142680;
+            margin-left: 10%;
+        }
+    
+        .table_posts {
+            border: 1px solid rgb(221, 221, 221);
+            border-bottom: 2px solid rgb(221, 221, 221);
+        }
+    
+        .table_posts th,
+        .table_posts td {
+            border: 1px solid rgb(221, 221, 221);
+    
+        }
+    
+        #btn2 {
+            font-size: 9px;
+        }
+    
+        #myModal {
+            margin-top: 15%;
+        }
+    
+        #modal_btn1 {
+            margin-left: 18%;
+            margin-right: 10%;
+            padding-left: 9%;
+            padding-right: 9%;
+        }
+    
+        .table_manage_posts a:hover {
+            text-decoration: none;
+        }
+    
+        /*--------Admin----------*/
+        #btn_duyet {
+            font-size: 9px;
+            padding-left: 13%;
+            padding-right: 13%;
+        }
+    
+        #ThongBao {
+            margin-top: 10%;
+        }
+    
+        .imformation {
+            margin-left: 28%;
+            margin-top: 5%;
+        }
+    
+        #status {
+            color: #d9534f;
+        }
+    
+        .menu-account ul li a:hover {
+            height: 50px;
+            color: white;
+            background-color: #4f639e;
+        }
+    
+        .menu-account_ul {
+            height: 30px;
+        }
+    
+        /*--changepass--*/
+        .post-57 {
+            margin-top: 5%;
+            padding: 8%;
+            border-radius: 20px;
+            box-shadow: 0px 2px 2px 0px rgba(10, 10, 10, 5), 5px 7px 7px 5px rgba(255, 255, 255, 0.5) inset;
+        }
+    
+        .control-label1 {
+            padding: 1% 5% 1% 3%;
+            color: #51f56e;
+            background-color: rgba(0, 0, 0, 0.28);
+        }
+    
+        #lab {
+            color: #51f56e;
+            background-color: rgba(0, 0, 0, 0.28);
+        }
+    
+        #theme-my-login {
+            margin-bottom: -2%;
+        }
+    
+        /*---map--*/
+        #ip_search {
+            margin-top: 11px;
+            padding: 7px;
+        }
+    
+        #logout {
+            color: red;
+        }
+    
+        .table_manage_posts {
+            margin-bottom: 91px;
+        }
+    
+        .table_manage_posts th {
+            font-size: 95%;
+            font-weight: bold;
+            text-align: center;
+            ;
+        }
+    
+        .table_manage_posts td {
+            font-size: 90%;
+        }
+    
+        .my-footer {
+            margin-top: 3.4%;
+            height: 50px;
+            background-color: #a0a0a0;
+        }
+    
+        .text-muted {
+            margin-top: 5px;
+        }
+    </style>
+    
+    
+    <div class="container-fluid">
+        <div class="container-fluid col-sm-8">
+    
+    
+    
+            <form name="editpost.editpostForm" ng-submit="editpost.editpost(editpost.news)">
+                <div class="shadow">
+                    <div class="group_fields">
+                        <h3 class="form_title" style="background-color: #1931a7;padding: 1%;color: #fff; margin-top: 5%">
+                            Thông tin chung</h3>
+                    </div>
+                    <div class="fields">
+                        <p class="bg-success">Các bạn nên điền đầy đủ thông tin vào các mục dưới đây để tin đăng có hiệu quả
+                            hơn.</p>
+                        <div class="group_fields">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label for="tieude" class="col-sm-12 control-label">Tiêu đề tin <span
+                                                class="red_require">(*) </span></label>
+                                        <input type="text" class="form-control" name="tieude" id="tieude"
+                                            placeholder="Hãy đặt tiêu đề đầy đủ nghĩa, khách sẽ quan tâm hơn"
+                                            maxlength="100" ng-model="editpost.news.title" required>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6 col-xs-12">
+                                        <label for="loaichuyenmuc" class="col-sm-12 control-label">Loại chuyên mục <span
+                                                class="red_require">(*)</span></label>
+                                        <select ng-model="editpost.news.category" id="loaichuyenmuc" name="loaichuyenmuc"
+                                            class="form-control" required!>
+                                            <option value="">Chon chuyen muc</option>
+                                            <option value="Phòng trọ, nhà trọ">Phòng trọ, nhà trọ</option>
+                                            <option value="Cho thuê nhà nguyên căn">Cho thuê nhà nguyên căn</option>
+                                            <option value="Tìm người ở ghép">Tìm người ở ghép</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <label for="sodienthoai" class="col-sm-12 control-label">Số điện thoại <span
+                                                class="red_require">(*)</span></label>
+                                        <input ng-model="editpost.news.phone" type="number" class="form-control"
+                                            name="sodienthoai" id="sodienthoai"
+                                            placeholder="Nhập đúng số điện thoại để tiện cho khách liên hệ" required>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label for="giachothue" class="col-sm-12 control-label">Giá cho thuê <span
+                                                class="red_require">(*)</span></label>
+                                        <input ng-model="editpost.news.price" type="number" min="1" class="form-control"
+                                            name="giachothue" id="giachothue" placeholder="Giá cho thuê (VNĐ)" required>
+                                    </div>
+                                    
+                                    <div class="col-sm-6">
+                                        <label for="dongvigiachothue" class="col-sm-12 control-label">Số người <span
+                                                class="red_require">(*)</span></label>
+                                        <input ng-model="editpost.news.amount" type="number" min="1" class="form-control"
+                                           placeholder="chon so nguoi" name="songuoi" id="songuoi" value="1" required>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="dientich" class="col-sm-12 control-label">Diện tích <span
+                                            class="red_require">(*)</span></label>
+                                    <input ng-model="editpost.news.acreage" type="number" min="1" class="form-control"
+                                        name="dientich" id="dientich" placeholder="Nhập diện tích (Đơn vị m²)" required>
+                                </div>
+                                
+                                <div class="col-sm-6 col-xs-12">
+                                    <label for="doituong" class="col-sm-12 control-label">Đối tượng cho thuê</label>
+                                    <select ng-model="editpost.news.sex" id="doituong" name="doituong" class="form-control">
+                                            <option value="">Chon doi tuong</option>
+                                        <option value="Tất cả">Tất cả</option>
+                                        <option value="Nam">Nam</option>
+                                        <option value="Nữ">Nữ</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="shadow">
+                    <div class="group_fields">
+                        <h3 class="form_title" style="background-color: #1931a7;padding: 1%;color: #fff;margin-top: 7%">Địa
+                            chỉ</h3>
+                        <div class="fields">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label for="diachi" class="col-sm-12 control-label">Địa chỉ chính xác <span
+                                                class="red_require">(*)</span></label>
+                                        <input ng-model="editpost.news.address" value="" id="pac-input" type="text"
+                                            class="form-control" name="diachi"
+                                            placeholder="Hãy nhập địa chỉ chính xác để khách dễ tìm hơn" required>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="shadow">
+                    <div class="group_fields">
+                        <h3 class="form_title" style="background-color: #1931a7;padding: 1%;color: #fff;margin-top: 7%">Mô
+                            tả</h3>
+                        <div class="fields">
+                            <p class="bg-success">Mô tả thông tin rỏ ràng, đầu đủ. Hãy viết chữ có dấu để Tin đăng được quan
+                                tâm nhiều hơn</p>
+                            <textarea ng-model="editpost.news.description" style="margin-top: 3%;" name="mota"
+                                class="form-control" rows="8" placeholder="Mô tả thông tin"></textarea>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <div class="shadow">
+                    <div class="group_fields">
+                        <h3 class="form_title" style="background-color: #1931a7;padding: 1%;color: #fff;margin-top: 7%">Hình
+                            ảnh</h3>
+                        <div class="fields">
+                            <p class="bg-success">Tin đăng có hình ảnh rõ ràng sẽ được xem và gọi gấp nhiều lần so với tin
+                                rao không có ảnh. Hãy đăng ảnh để được giao dịch nhanh chóng!</p>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label for="thumbnail-post" class="col-sm-12 control-label">Hình ảnh (Giữ phím Ctrl
+                                            hoặc Command để chọn nhiều)</label>
+                                        <p>Định dạng ảnh hỗ trợ: .jpg .png .jpeg .gif - Dung lượng ảnh không quá 2MB</p>
+                                        <div class="list-input-uploads">
+                                            <div class="more-item more-item-1">
+                                                <!-- <input ng-model="post.postdata.image" style="color: red;" type="file" class="dimmy-input-file"
+                                                    name="image" accept="image/*" value="Upload" multiple="multiple"
+                                                    required /> -->
+    
+                                                <input type="file" ngf-select ng-model="editpost.news.file" name="file"
+                                                 ngf-pattern="'image/*'" accept="image/*" ngf-max-size="20MB"/>
+                                                Image thumbnail: <img ng-show="editpost.news.file==undefind" style="width:100px;" 
+                                                    ngf-thumbnail="editpost.news.file || '/thumb.jpg'" />
+
+                                                    <img ng-show="editpost.news.file.size==undefind" style="width:100px;" src="../../../../assets/images/{{file}}">
+                                                <i ng-show="post.postForm.file.$error.maxSize">File too large
+                                                   
+                                                    {{post.file.size / 1000000|number:1}}MB: max 20M</i>
+    
+                                                    <label ng-show="errorImage"></label>
+    
+                                                    <!-- <input type="file" ngf-select name="file" ng-model="post.postdata.file"> -->
+    
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+                <div class="btn btn-success" ng-show="editpost.successMsg">
+                    {{editpost.successMsg}}
+                </div>
+                <div class="btn btn-warning" ng-show="editpost.errorMsg">
+                    {{editpost.errorMsg}}
+                </div>
+                <div class="btn_dangtin">
+                    <input type="submit" class="btn_dangtin btn-warning" style="margin-top: 3%; float: right;padding: 1%;"
+                        value="Đăng tin ngay">
+                </div>
+            </form>
+        </div>
+    
+        <div id="sidebar" class="block-right col-md-4">
+            <div class="block_term" style="text-align: justify; font-size: 12px;">
+                <img width="100%" src="../../../../assets/images/logo.PNG">
+                <p style="text-align: center;"></p>
+                <p><strong>Trước khi bạn đăng tin lên website. xin vui lòng đọc kỹ các quy định sau đây:</strong></p>
+                <p id="p1">1. Không được đăng ký tài khoản và khai báo những thông tin giả mạo, đặt tên tài khoản phản cảm,
+                    thô tục</p>
+                <p id="p1">2. Không được phép đăng tin liên quan đến các vấn đề mà pháp luật Việt Nam không cho phép.</p>
+                <p id="p1">3. Không được đăng những bài viết, thông tin có nội dung vi phạm pháp luật: đả kích, bôi nhọ, chỉ
+                    trích hay bàn luận về chính trị, tôn giáo, phản động, kỳ thị văn hóa, dân tộc, cũng như vi phạm khác
+                    liên quan đến thuần phong mỹ tục của dân tộc Việt Nam.</p>
+                <p id="p1">4. Tiêu đề và nội dung của tin đăng phải dùng tiếng Việt có dấu. Không được sử dụng từ ngữ thô
+                    tục, mất văn hoá.</p>
+                <p id="p1">5. Tin đăng phải có địa chỉ liên lạc cụ thể không được cho địa chỉ sai. hay dùng thông tin địa
+                    chỉ của người khác</p>
+                <p id="p1">6. Các bài viết không có nội dung hoặc nội dung không liên quan đến chuyên mục. Những bài viết
+                    này sẽ bị xóa mà không cần báo trước.</p>
+                <p id="p1">7. Không tạo nhiều tài khoản để đăng tin, nếu chúng tôi phát hiện sẽ xóa và ban toàn bộ nick.</p>
+                <p id="p1">8. Không được đăng quá nhiều tin trong ngày và không đăng tin có tiêu đề, nội dung tương tự nhau.
+                </p>
+                <p id="p1">9. Khi phát hiện tin đăng không đúng sự thật, hay chỗ cho thuê là dịch vụ hay cò nhà trọ, bạn vui
+                    lòng thông báo cho Ban quản trị biết để chúng tôi kịp thời xử lý.</p>
+                <p id="p1">10. Những trường hợp cố tình spam, vi phạm nội quy nhiều lần thì chúng tôi sẽ cấm không cho bạn
+                    đăng tin và tất cả mọi tin đăng của bạn sẽ không được hiển thị trên <strong>PhongTro.com</strong>.</p>
+                <p id="p1"><strong>Tất cả các tin đăng sai phạm quy định trên sẽ bị xóa mà không cần thông báo
+                        trước.</strong></p>
+                <p id="p1"><strong>Chúng tôi không chịu trách nhiệm về nội dung các bài đăng trên website.</strong></p>
+            </div>
+        </div>
+    </div>
