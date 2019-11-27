@@ -21,7 +21,7 @@
     "jsonwebtoken": "^7.1.9",
     "moment": "^2.24.0",
     "mongodb": "^3.3.3",
-    "mongoose": "^4.6.0",
+    "mongoose": "^5.7.5",
     "mongoose-title-case": "0.0.4",
     "mongoose-validator": "^1.2.5",
     "morgan": "^1.7.0",
