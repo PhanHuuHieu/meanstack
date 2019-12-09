@@ -3,7 +3,6 @@ angular.module('managementController', [])
     //  User to control the management page and managing of user accounts
     .controller('managementCtrl', function (User, $scope, Admin) {
         var app = this;
-
         app.loading = true;
         app.accessDenied = true;
         app.errorMsg = false;
@@ -113,7 +112,6 @@ angular.module('managementController', [])
             app.showMoreError = false;
         };
 
-        // Perform an advanced, criteria-based search
         app.advancedSearch = function (searchByUsername, searchByEmail, searchByName) {
             if (searchByUsername || searchByEmail || searchByName) {
                 $scope.advancedSearchFilter = {}; // Create the filter object

@@ -33,6 +33,8 @@ module.exports = function (router) {
             res.json({ error_code: 0, err_desc: null });
         });
     })
+
+    // save post database
     router.post('/savenews', function (req, res) {
         var newId = {};
         var datetime = new Date();

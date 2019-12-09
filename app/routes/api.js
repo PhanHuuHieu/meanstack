@@ -140,7 +140,7 @@ module.exports = function(router) {
                         } else if(user.status=="Khóa") {
                             res.json({ success: false, message: 'Account locked', expired: true }); // Account is not activated 
                         } else {
-                            var token = jwt.sign({ username: user.username, email: user.email }, secret, { expiresIn: '24h' }); 
+                            var token = jwt.sign({ username: user.username, email: user.email }, secret, { expiresIn: '5s' }); 
                             res.json({ success: true, message: 'User authenticated!', token: token }); 
                         }
                     }
@@ -490,7 +490,6 @@ module.exports = function(router) {
                     if (mainUser.permission === 'admin' || mainUser.permission === 'moderator'||mainUser.permission === 'user') {
                         User.findOne({ _id: editUser }, function(err, user) {
                             if (err) {
-                                // Create an e-mail object that contains the error. Set to automatically send it to myself for troubleshooting.
                                 res.json({ success: false, message: 'Error. Please try again' });
                             } else {
                                 
@@ -693,7 +692,7 @@ module.exports = function(router) {
             if(!user) {
                 res.json({success:false, message:'Please try again'});
             } else if(user.permission!='admin' || user.permission !='moderator'){
-                res.json({success: false, message:' you are not allow to do this. Permission wrong'})
+                res.json({success: false, message:' you are not allow to do this. Permission not permit'})
             } else{
                 user.status="Khóa";
                 user.save(function (err) {

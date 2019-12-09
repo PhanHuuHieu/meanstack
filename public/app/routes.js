@@ -236,7 +236,7 @@ var app = angular.module('appRoutes', ['ngRoute', 'angularUtils.directives.dirPa
         $locationProvider.html5Mode({ enabled: true, requireBase: false }); // Required to remove AngularJS hash from URL (no base is required in index file)
     });
 
-// Run a check on each route to see if user is logged in or not (depending on if it is specified in the individual route)
+// Run a check on each route to see if user is logged in or not
 app.run(['$rootScope', 'Auth', '$location', 'User', function ($rootScope, Auth, $location, User) {
 
     // Check each time route changes    

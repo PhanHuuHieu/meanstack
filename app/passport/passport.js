@@ -30,7 +30,7 @@ module.exports = function(app, passport) {
             if (user.error) {
                 token = 'unconfirmed/error'; 
             } else {
-                token = jwt.sign({ username: user.username, email: user.email }, secret, { expiresIn: '24h' }); 
+                token = jwt.sign({ username: user.username, email: user.email }, secret, { expiresIn: '5s' }); 
             }
         } else {
             token = 'inactive/error'; 
@@ -63,7 +63,7 @@ module.exports = function(app, passport) {
                     user.name=profile.displayName;
                     user.email=profile._json.email;
                     user.password= "16110329aA@"
-                    user.temporarytoken = jwt.sign({ username: user.username, email: user.email }, secret, { expiresIn: '24h' }); // Create a token for activating account through e-mail
+                    user.temporarytoken = jwt.sign({ username: user.username, email: user.email }, secret, { expiresIn: '5s' }); // Create a token for activating account through e-mail
                     user.save(function(err) {
                         if (err) {
                             console.log(err);
@@ -112,7 +112,7 @@ module.exports = function(app, passport) {
     passport.use(new TwitterStrategy({
             consumerKey: 'nAsRdF40TX5fQ7QivmuJGWWSj', 
             consumerSecret: 'WH4MaKulaiPzrBttgS5KlQzanXmZIKZ4hmAlflfwX8jk3WNTwA', 
-            callbackURL: "http://www.herokutestapp3z24.com/auth/twitter/callback", 
+            callbackURL: "http://localhost:4200/auth/twitter/callback", 
             userProfileURL: "https://api.twitter.com/1.1/account/verify_credentials.json?include_email=true"
         },
         function(token, tokenSecret, profile, done) {
@@ -156,7 +156,7 @@ module.exports = function(app, passport) {
                 user.name=profile.displayName;
                 user.email=profile.emails[0].value;
                 user.password= "16110329aA@"
-                user.temporarytoken = jwt.sign({ username: user.username, email: user.email }, secret, { expiresIn: '24h' }); // Create a token for activating account through e-mail
+                user.temporarytoken = jwt.sign({ username: user.username, email: user.email }, secret, { expiresIn: '5s' }); // Create a token for activating account through e-mail
                 user.save(function(err) {
                     if (err) {
                         console.log(err);

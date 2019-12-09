@@ -5,7 +5,7 @@ This application requires installation of NodeJS and MongoDB prior to running.
 
 ## Description
 
-This application was created to highlight common methods used in MEAN Stack. It is meant for beginners or those interested in learning about the MEAN Stack infrastructure. MEAN Stack App is based on a RESTful API and MVC. 
+This application was created to highlight common methods used in MEAN Stack. It is meant for beginners or those interested in learning about the MEAN Stack infrastructure. MEAN Stack App is based on a Restful API and MVC. 
 
 ## Installation
 
